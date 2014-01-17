@@ -22,6 +22,10 @@
 		1A9764E01888FBE7007FDC4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A9764DE1888FBE7007FDC4E /* InfoPlist.strings */; };
 		1A9764E21888FBE7007FDC4E /* SampleAppClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9764E11888FBE7007FDC4E /* SampleAppClientTests.m */; };
 		1A9764ED1889074E007FDC4E /* ResponseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9764EC1889074E007FDC4E /* ResponseContentViewController.m */; };
+		1AEB2B7F188924BA001F81A6 /* NewRelicAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB2B7E188924BA001F81A6 /* NewRelicAgent.framework */; };
+		1AEB2B8118892558001F81A6 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB2B8018892558001F81A6 /* CoreTelephony.framework */; };
+		1AEB2B8318892565001F81A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB2B8218892565001F81A6 /* SystemConfiguration.framework */; };
+		1AEB2B851889256F001F81A6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB2B841889256F001F81A6 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		1A9764E11888FBE7007FDC4E /* SampleAppClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleAppClientTests.m; sourceTree = "<group>"; };
 		1A9764EB1889074E007FDC4E /* ResponseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseContentViewController.h; sourceTree = "<group>"; };
 		1A9764EC1889074E007FDC4E /* ResponseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseContentViewController.m; sourceTree = "<group>"; };
+		1AEB2B7E188924BA001F81A6 /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NewRelicAgent.framework; sourceTree = "<group>"; };
+		1AEB2B8018892558001F81A6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1AEB2B8218892565001F81A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1AEB2B841889256F001F81A6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +71,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AEB2B851889256F001F81A6 /* libz.dylib in Frameworks */,
+				1AEB2B8318892565001F81A6 /* SystemConfiguration.framework in Frameworks */,
+				1AEB2B8118892558001F81A6 /* CoreTelephony.framework in Frameworks */,
 				1A9764B91888FBE7007FDC4E /* CoreGraphics.framework in Frameworks */,
 				1A9764BB1888FBE7007FDC4E /* UIKit.framework in Frameworks */,
 				1A9764B71888FBE7007FDC4E /* Foundation.framework in Frameworks */,
+				1AEB2B7F188924BA001F81A6 /* NewRelicAgent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +116,10 @@
 		1A9764B51888FBE7007FDC4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AEB2B841889256F001F81A6 /* libz.dylib */,
+				1AEB2B8218892565001F81A6 /* SystemConfiguration.framework */,
+				1AEB2B8018892558001F81A6 /* CoreTelephony.framework */,
+				1AEB2B7E188924BA001F81A6 /* NewRelicAgent.framework */,
 				1A9764B61888FBE7007FDC4E /* Foundation.framework */,
 				1A9764B81888FBE7007FDC4E /* CoreGraphics.framework */,
 				1A9764BA1888FBE7007FDC4E /* UIKit.framework */,
@@ -382,9 +398,14 @@
 		1A9764E61888FBE7007FDC4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/James/workspace/ios/SampleAppClient,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleAppClient/SampleAppClient-Prefix.pch";
 				INFOPLIST_FILE = "SampleAppClient/SampleAppClient-Info.plist";
@@ -396,9 +417,14 @@
 		1A9764E71888FBE7007FDC4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/James/workspace/ios/SampleAppClient,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleAppClient/SampleAppClient-Prefix.pch";
 				INFOPLIST_FILE = "SampleAppClient/SampleAppClient-Info.plist";
@@ -470,6 +496,7 @@
 				1A9764E71888FBE7007FDC4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A9764E81888FBE7007FDC4E /* Build configuration list for PBXNativeTarget "SampleAppClientTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +505,7 @@
 				1A9764EA1888FBE7007FDC4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
