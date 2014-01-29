@@ -19,8 +19,10 @@
 
 - (void)viewDidLoad
 {
+    NR_TRACE_METHOD_START(0);
     [super viewDidLoad];
 	[self initFieldValues];
+    NR_TRACE_METHOD_STOP;
 }
 
 - (void) initFieldValues
@@ -38,9 +40,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NR_TRACE_METHOD_START(0);
     NSMutableArray * contents = [self visitUrl];
     ResponseContentViewController *dvc = [segue destinationViewController];
     dvc.contents = contents;
+    NR_TRACE_METHOD_STOP;
 }
 
 - (NSMutableArray *)visitUrl

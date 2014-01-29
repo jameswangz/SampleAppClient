@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A52582A18966A82006D9853 /* FoglightAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A52582918966A82006D9853 /* FoglightAgent.framework */; };
 		1A9764B71888FBE7007FDC4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9764B61888FBE7007FDC4E /* Foundation.framework */; };
 		1A9764B91888FBE7007FDC4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9764B81888FBE7007FDC4E /* CoreGraphics.framework */; };
 		1A9764BB1888FBE7007FDC4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9764BA1888FBE7007FDC4E /* UIKit.framework */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A52582918966A82006D9853 /* FoglightAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FoglightAgent.framework; path = ../../../temp/FoglightAgent.framework; sourceTree = "<group>"; };
 		1A9764B31888FBE7007FDC4E /* SampleAppClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleAppClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9764B61888FBE7007FDC4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1A9764B81888FBE7007FDC4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,6 +79,7 @@
 				1A9764B91888FBE7007FDC4E /* CoreGraphics.framework in Frameworks */,
 				1A9764BB1888FBE7007FDC4E /* UIKit.framework in Frameworks */,
 				1A9764B71888FBE7007FDC4E /* Foundation.framework in Frameworks */,
+				1A52582A18966A82006D9853 /* FoglightAgent.framework in Frameworks */,
 				1AEB2B7F188924BA001F81A6 /* NewRelicAgent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +119,7 @@
 		1A9764B51888FBE7007FDC4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A52582918966A82006D9853 /* FoglightAgent.framework */,
 				1AEB2B841889256F001F81A6 /* libz.dylib */,
 				1AEB2B8218892565001F81A6 /* SystemConfiguration.framework */,
 				1AEB2B8018892558001F81A6 /* CoreTelephony.framework */,
@@ -405,10 +409,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/James/workspace/ios/SampleAppClient,
+					/Users/James/temp,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleAppClient/SampleAppClient-Prefix.pch";
 				INFOPLIST_FILE = "SampleAppClient/SampleAppClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/James/workspace/ios/SampleAppClient,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -424,10 +433,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/James/workspace/ios/SampleAppClient,
+					/Users/James/temp,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleAppClient/SampleAppClient-Prefix.pch";
 				INFOPLIST_FILE = "SampleAppClient/SampleAppClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/James/workspace/ios/SampleAppClient,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -443,6 +457,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/James/workspace/ios/SampleAppClient/SampleAppClientTests,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleAppClient/SampleAppClient-Prefix.pch";
@@ -467,6 +482,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/James/workspace/ios/SampleAppClient/SampleAppClientTests,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleAppClient/SampleAppClient-Prefix.pch";

@@ -16,3 +16,4 @@
 #endif
 
 #import <NewRelicAgent/NewRelic.h>
+#import <FoglightAgent/FoglightAgent.h>

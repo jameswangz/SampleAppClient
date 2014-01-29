@@ -47,37 +47,19 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = [self.contents objectAtIndex:indexPath.row];
-    NSLog(@"%@", cell.textLabel.text);
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.font = [UIFont systemFontOfSize: 14.0];
+//    cell.textLabel.text = [self.contents objectAtIndex:indexPath.row];
+    
+//    UITextView *textView = [UITextView new];
+    UITextView *textView=[[UITextView alloc] initWithFrame:CGRectMake(5, 5, 290, 200)];
+    
+    textView.text = [self.contents objectAtIndex:indexPath.row];
+    NSLog(textView.text);
+    [cell.contentView addSubview:textView];
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // this method is called for each cell and returns height
-    NSString * text = [self.contents objectAtIndex:indexPath.row];
-    CGFloat width = 100;
-    NSAttributedString *attributedText =
-    [[NSAttributedString alloc]
-     initWithString:text
-     attributes:@
-     {
-     NSFontAttributeName: [UIFont systemFontOfSize: 14.0]
-     }];
-    CGRect rect = [attributedText boundingRectWithSize:(CGSize){width, CGFLOAT_MAX}
-                                               options:NSStringDrawingUsesLineFragmentOrigin
-                                               context:nil];
-    // return either default height or height to fit the text
-    CGFloat height = rect.size.height;
-    return height < 44.0 ? 44.0 : height;
+-  (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
+    return 200;
 }
-
-
-
-
-
 
 @end
