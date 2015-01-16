@@ -53,7 +53,7 @@
     UITextView *textView=[[UITextView alloc] initWithFrame:CGRectMake(5, 5, 290, 200)];
     
     textView.text = [self.contents objectAtIndex:indexPath.row];
-    NSLog(textView.text);
+    NSLog(@"%@", textView.text);
     [cell.contentView addSubview:textView];
     return cell;
 }

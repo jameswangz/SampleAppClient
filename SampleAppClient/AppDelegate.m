@@ -15,7 +15,7 @@
 {
     // Override point for customization after application launch.
     [NewRelicAgent startWithApplicationToken:@"AA7d20584120ca855128c2bee19b56ef98fcd3073a"];
-    [NRLogger setLogLevels:NRLogLevelALL];
+//    [NRLogger setLogLevels:NRLogLevelALL];
     [NRLogger setLogTargets:NRLogTargetConsole|NRLogTargetFile];
 //    [FoglightAgent start];
     return YES;

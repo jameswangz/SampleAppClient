@@ -1,10 +1,13 @@
 PODS:
-  - NewRelicAgent (4.139)
+  - FoglightAPM (0.1.1)
+  - NewRelicAgent (4.83)
 
 DEPENDENCIES:
-  - NewRelicAgent
+  - FoglightAPM
+  - NewRelicAgent (= 4.83)
 
 SPEC CHECKSUMS:
-  NewRelicAgent: fe89ea76bcbbe3d45c3adea698f9d786ea6e21ae
+  FoglightAPM: 5349730c1791fc72383d139b2cd2d05dd6936533
+  NewRelicAgent: 1adba1fb51631f598a2a130e7b1c3be1de715736
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.0.beta.1

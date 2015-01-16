@@ -80,4 +80,8 @@
     [self.callTimes resignFirstResponder];
 }
 
+- (IBAction)makeCrash:(id)sender {
+    @throw @"Bomb!";
+}
+
 @end
