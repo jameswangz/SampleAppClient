@@ -62,6 +62,15 @@
                                     <action selector="makeCrash:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ltT-pm-suo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdh-WX-2VM">
+                                <rect key="frame" x="120" y="243" width="96" height="30"/>
+                                <state key="normal" title="Make Crash 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeCrash2:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zbr-77-aCW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration" hint="Server" label="Server">

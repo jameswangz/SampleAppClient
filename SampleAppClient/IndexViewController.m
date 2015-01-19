@@ -84,4 +84,8 @@
     @throw @"Bomb!";
 }
 
+- (IBAction)makeCrash2:(id)sender {
+    @throw @"Crash 2";
+}
+
 @end

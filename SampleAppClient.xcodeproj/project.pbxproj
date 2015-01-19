@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		16A9547F978B9F5BAE690DA6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BF0C3F7BA345225AC26AE3 /* libPods.a */; };
+		1A937E5A1A69168000E0EE9D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A937E581A69168000E0EE9D /* Crashlytics.framework */; };
+		1A937E5B1A69168000E0EE9D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A937E591A69168000E0EE9D /* Fabric.framework */; };
 		1A9764B71888FBE7007FDC4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9764B61888FBE7007FDC4E /* Foundation.framework */; };
 		1A9764B91888FBE7007FDC4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9764B81888FBE7007FDC4E /* CoreGraphics.framework */; };
 		1A9764BB1888FBE7007FDC4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9764BA1888FBE7007FDC4E /* UIKit.framework */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A937E581A69168000E0EE9D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		1A937E591A69168000E0EE9D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		1A9764B31888FBE7007FDC4E /* SampleAppClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleAppClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9764B61888FBE7007FDC4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1A9764B81888FBE7007FDC4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,9 +73,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A9764B91888FBE7007FDC4E /* CoreGraphics.framework in Frameworks */,
+				1A937E5A1A69168000E0EE9D /* Crashlytics.framework in Frameworks */,
 				1A9764BB1888FBE7007FDC4E /* UIKit.framework in Frameworks */,
 				1A9764B71888FBE7007FDC4E /* Foundation.framework in Frameworks */,
 				16A9547F978B9F5BAE690DA6 /* libPods.a in Frameworks */,
+				1A937E5B1A69168000E0EE9D /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +96,8 @@
 		1A9764AA1888FBE7007FDC4E = {
 			isa = PBXGroup;
 			children = (
+				1A937E581A69168000E0EE9D /* Crashlytics.framework */,
+				1A937E591A69168000E0EE9D /* Fabric.framework */,
 				1A9764BC1888FBE7007FDC4E /* SampleAppClient */,
 				1A9764DB1888FBE7007FDC4E /* SampleAppClientTests */,
 				1A9764B51888FBE7007FDC4E /* Frameworks */,
@@ -187,6 +195,7 @@
 				1A9764B01888FBE7007FDC4E /* Frameworks */,
 				1A9764B11888FBE7007FDC4E /* Resources */,
 				8DDEBDE36764DC2806AC679B /* Copy Pods Resources */,
+				1A937E571A69163A00E0EE9D /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -270,6 +279,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1A937E571A69163A00E0EE9D /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run f223bd304b0917850233d69eaf305dddf31af3bd a8220da3561430a3c20fc45af0bc44bd27632672002351314967dcb1608395d1";
+		};
 		35342469D3DDEEB3027A12BE /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

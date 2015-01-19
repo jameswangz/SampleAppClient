@@ -8,16 +8,21 @@
 
 #import "AppDelegate.h"
 #import <NewRelicAgent/NewRelic.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [NewRelicAgent startWithApplicationToken:@"AA7d20584120ca855128c2bee19b56ef98fcd3073a"];
+//    [NewRelicAgent startWithApplicationToken:@"AA7d20584120ca855128c2bee19b56ef98fcd3073a"];
 //    [NRLogger setLogLevels:NRLogLevelALL];
-    [NRLogger setLogTargets:NRLogTargetConsole|NRLogTargetFile];
+//    [NRLogger setLogTargets:NRLogTargetConsole|NRLogTargetFile];
 //    [FoglightAgent start];
+    
+    [Fabric with:@[CrashlyticsKit]];
     return YES;
 }
 							
