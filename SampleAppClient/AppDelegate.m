@@ -10,22 +10,75 @@
 #import <NewRelicAgent/NewRelic.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-
+#import <CrashReporter/CrashReporter.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-//    [NewRelicAgent startWithApplicationToken:@"AA7d20584120ca855128c2bee19b56ef98fcd3073a"];
-//    [NRLogger setLogLevels:NRLogLevelALL];
-//    [NRLogger setLogTargets:NRLogTargetConsole|NRLogTargetFile];
-//    [FoglightAgent start];
+    //NewRelic
+    [NewRelicAgent startWithApplicationToken:@"AA7d20584120ca855128c2bee19b56ef98fcd3073a"];
+    [NRLogger setLogLevels:NRLogLevelALL];
+    [NRLogger setLogTargets:NRLogTargetConsole|NRLogTargetFile];
     
-    [Fabric with:@[CrashlyticsKit]];
+    // Crashlytics
+//    [Fabric with:@[CrashlyticsKit]];
+    
+    // PLCrashReporter
+    PLCrashReporter *crashReporter = [PLCrashReporter sharedReporter];
+    NSError *error;
+    
+    if ([crashReporter hasPendingCrashReport]) {
+        [self handleCrashReport];
+    }
+    
+    if (![crashReporter enableCrashReporterAndReturnError:&error]) {
+        NSLog(@"Warning: Could not enable crash reporter: %@", error);
+    }
+
     return YES;
 }
-							
+
+- (void)handleCrashReport {
+    PLCrashReporter *reporter = [PLCrashReporter sharedReporter];
+    NSData* data;
+    NSError *error;
+    
+    data = [reporter loadPendingCrashReportDataAndReturnError:&error];
+    if (data == nil) {
+        NSLog(@"Could not load crash report : %@", error);
+    } else {
+        NSString *crashReportText = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"crash report text %@", crashReportText);
+        
+        PLCrashReport *report = [[PLCrashReport alloc] initWithData:data error:&error];
+        if (report != nil) {
+            NSString *iOSText = [PLCrashReportTextFormatter stringValueForCrashReport:report withTextFormat:PLCrashReportTextFormatiOS];
+            NSLog(@"%@", iOSText);
+            
+            
+            NSLog(@"Crashed on %@", report.systemInfo.timestamp);
+            NSLog(@"Crashed with signal %@ (code %@, address=0x%" PRIx64 ")", report.signalInfo.name, report.signalInfo.code, report.signalInfo.address);
+            
+            for (PLCrashReportThreadInfo *threadInfo in report.threads) {
+                NSLog(@"ThreadInfo : %ld ", (long) threadInfo.threadNumber);
+                for (PLCrashReportStackFrameInfo *stackFrame in threadInfo.stackFrames) {
+                    NSLog(@"  StackFrame %@", stackFrame);
+                }
+                for (PLCrashReportRegisterInfo *theRegister in threadInfo.registers) {
+                    NSLog(@"  Register : %@", theRegister.registerName);
+                }
+            }
+            for (PLCrashReportBinaryImageInfo *imageInfo in report.images) {
+                NSLog(@"Image Info : %@ ", imageInfo.debugDescription);
+            }
+        }
+    }
+    
+    [reporter purgePendingCrashReport];
+    return;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

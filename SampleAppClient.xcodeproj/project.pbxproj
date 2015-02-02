@@ -24,6 +24,7 @@
 		1A9764E01888FBE7007FDC4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A9764DE1888FBE7007FDC4E /* InfoPlist.strings */; };
 		1A9764E21888FBE7007FDC4E /* SampleAppClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9764E11888FBE7007FDC4E /* SampleAppClientTests.m */; };
 		1A9764ED1889074E007FDC4E /* ResponseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9764EC1889074E007FDC4E /* ResponseContentViewController.m */; };
+		1AD004091A70D549005BE861 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD004081A70D549005BE861 /* CrashReporter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		1A9764E11888FBE7007FDC4E /* SampleAppClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleAppClientTests.m; sourceTree = "<group>"; };
 		1A9764EB1889074E007FDC4E /* ResponseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseContentViewController.h; sourceTree = "<group>"; };
 		1A9764EC1889074E007FDC4E /* ResponseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseContentViewController.m; sourceTree = "<group>"; };
+		1AD004081A70D549005BE861 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
 		1AEB2B8018892558001F81A6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		1AEB2B8218892565001F81A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1AEB2B841889256F001F81A6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD004091A70D549005BE861 /* CrashReporter.framework in Frameworks */,
 				1A9764B91888FBE7007FDC4E /* CoreGraphics.framework in Frameworks */,
 				1A937E5A1A69168000E0EE9D /* Crashlytics.framework in Frameworks */,
 				1A9764BB1888FBE7007FDC4E /* UIKit.framework in Frameworks */,
@@ -118,6 +121,7 @@
 		1A9764B51888FBE7007FDC4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AD004081A70D549005BE861 /* CrashReporter.framework */,
 				1AEB2B841889256F001F81A6 /* libz.dylib */,
 				1AEB2B8218892565001F81A6 /* SystemConfiguration.framework */,
 				1AEB2B8018892558001F81A6 /* CoreTelephony.framework */,
@@ -196,6 +200,7 @@
 				1A9764B11888FBE7007FDC4E /* Resources */,
 				8DDEBDE36764DC2806AC679B /* Copy Pods Resources */,
 				1A937E571A69163A00E0EE9D /* Crashlytics */,
+				1AEC70E41A6CE78C00250DDF /* NewRelic */,
 			);
 			buildRules = (
 			);
@@ -292,6 +297,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run f223bd304b0917850233d69eaf305dddf31af3bd a8220da3561430a3c20fc45af0bc44bd27632672002351314967dcb1608395d1";
+		};
+		1AEC70E41A6CE78C00250DDF /* NewRelic */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = NewRelic;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#DSYM_UPLOAD_URL=\"http://mobile-symbol-upload.newrelic.com/symbol\"\nSCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n\n/bin/sh \"${SCRIPT}\" \"AA7d20584120ca855128c2bee19b56ef98fcd3073a\"";
 		};
 		35342469D3DDEEB3027A12BE /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -476,6 +495,8 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
+				STRIP_STYLE = all;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -487,6 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/James/workspace/ios/SampleAppClient,
@@ -503,6 +525,8 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
+				STRIP_STYLE = all;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

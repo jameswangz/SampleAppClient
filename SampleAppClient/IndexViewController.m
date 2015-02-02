@@ -27,7 +27,7 @@
 
 - (void) initFieldValues
 {
-    self.url.text = @"http://10.8.255.210:8080/javaee-sample/jdbcandjmsqueue";
+    self.url.text = @"http://10.8.255.235/wordpress/wp-login.php";
     self.callTimes.text = @"1";
 }
 
@@ -85,7 +85,9 @@
 }
 
 - (IBAction)makeCrash2:(id)sender {
-    @throw @"Crash 2";
+    NSMutableArray *array = [NSMutableArray new];
+    [array addObject:nil];
+    // change
 }
 
 @end
