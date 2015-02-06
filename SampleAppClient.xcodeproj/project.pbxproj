@@ -24,7 +24,6 @@
 		1A9764E01888FBE7007FDC4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A9764DE1888FBE7007FDC4E /* InfoPlist.strings */; };
 		1A9764E21888FBE7007FDC4E /* SampleAppClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9764E11888FBE7007FDC4E /* SampleAppClientTests.m */; };
 		1A9764ED1889074E007FDC4E /* ResponseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9764EC1889074E007FDC4E /* ResponseContentViewController.m */; };
-		1AD004091A70D549005BE861 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD004081A70D549005BE861 /* CrashReporter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AD004091A70D549005BE861 /* CrashReporter.framework in Frameworks */,
 				1A9764B91888FBE7007FDC4E /* CoreGraphics.framework in Frameworks */,
 				1A937E5A1A69168000E0EE9D /* Crashlytics.framework in Frameworks */,
 				1A9764BB1888FBE7007FDC4E /* UIKit.framework in Frameworks */,
@@ -479,6 +477,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/James/workspace/ios/SampleAppClient,

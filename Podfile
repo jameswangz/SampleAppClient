@@ -3,3 +3,4 @@ platform :ios, '8.0'
 
 pod 'NewRelicAgent', '4.83'
 pod 'FoglightAPM'
+pod 'CrittercismSDK'

@@ -11,30 +11,35 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <CrashReporter/CrashReporter.h>
+#import <Crittercism.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //NewRelic
-    [NewRelicAgent startWithApplicationToken:@"AA7d20584120ca855128c2bee19b56ef98fcd3073a"];
-    [NRLogger setLogLevels:NRLogLevelALL];
-    [NRLogger setLogTargets:NRLogTargetConsole|NRLogTargetFile];
+//    [NewRelicAgent startWithApplicationToken:@"AA7d20584120ca855128c2bee19b56ef98fcd3073a" withoutSecurity:YES];
+//    [NRLogger setLogLevels:NRLogLevelALL];
+//    [NRLogger setLogTargets:NRLogTargetConsole|NRLogTargetFile];
     
     // Crashlytics
 //    [Fabric with:@[CrashlyticsKit]];
     
+    // Crittercism
+    [Crittercism enableWithAppID:@"54d332cd51de5e9f042ed67e"];
+    
+    
     // PLCrashReporter
-    PLCrashReporter *crashReporter = [PLCrashReporter sharedReporter];
-    NSError *error;
-    
-    if ([crashReporter hasPendingCrashReport]) {
-        [self handleCrashReport];
-    }
-    
-    if (![crashReporter enableCrashReporterAndReturnError:&error]) {
-        NSLog(@"Warning: Could not enable crash reporter: %@", error);
-    }
+//    PLCrashReporter *crashReporter = [PLCrashReporter sharedReporter];
+//    NSError *error;
+//    
+//    if ([crashReporter hasPendingCrashReport]) {
+//        [self handleCrashReport];
+//    }
+//    
+//    if (![crashReporter enableCrashReporterAndReturnError:&error]) {
+//        NSLog(@"Warning: Could not enable crash reporter: %@", error);
+//    }
 
     return YES;
 }

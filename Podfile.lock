@@ -1,12 +1,15 @@
 PODS:
+  - CrittercismSDK (5.0.7)
   - FoglightAPM (0.1.1)
   - NewRelicAgent (4.83)
 
 DEPENDENCIES:
+  - CrittercismSDK
   - FoglightAPM
   - NewRelicAgent (= 4.83)
 
 SPEC CHECKSUMS:
+  CrittercismSDK: 1f1a91c7a51ca8044e675765bde5d2aa97295b1d
   FoglightAPM: 5349730c1791fc72383d139b2cd2d05dd6936533
   NewRelicAgent: 1adba1fb51631f598a2a130e7b1c3be1de715736
 
