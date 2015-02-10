@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		16A9547F978B9F5BAE690DA6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BF0C3F7BA345225AC26AE3 /* libPods.a */; };
+		1A7E24571A89E580000884BD /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E24561A89E580000884BD /* AssetsLibrary.framework */; };
+		1A7E24591A89E58E000884BD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E24581A89E58E000884BD /* CoreText.framework */; };
+		1A7E245B1A89E597000884BD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E245A1A89E597000884BD /* MobileCoreServices.framework */; };
+		1A7E245D1A89E5A1000884BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E245C1A89E5A1000884BD /* QuartzCore.framework */; };
+		1A7E245F1A89E5A7000884BD /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E245E1A89E5A7000884BD /* QuickLook.framework */; };
+		1A7E24611A89E5AF000884BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E24601A89E5AF000884BD /* Security.framework */; };
+		1A7E24631A89E652000884BD /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E24621A89E652000884BD /* HockeySDK.framework */; };
 		1A937E5A1A69168000E0EE9D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A937E581A69168000E0EE9D /* Crashlytics.framework */; };
 		1A937E5B1A69168000E0EE9D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A937E591A69168000E0EE9D /* Fabric.framework */; };
 		1A9764B71888FBE7007FDC4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9764B61888FBE7007FDC4E /* Foundation.framework */; };
@@ -37,6 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A7E24561A89E580000884BD /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		1A7E24581A89E58E000884BD /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		1A7E245A1A89E597000884BD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1A7E245C1A89E5A1000884BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1A7E245E1A89E5A7000884BD /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		1A7E24601A89E5AF000884BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1A7E24621A89E652000884BD /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		1A937E581A69168000E0EE9D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		1A937E591A69168000E0EE9D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		1A9764B31888FBE7007FDC4E /* SampleAppClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleAppClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,12 +87,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7E24611A89E5AF000884BD /* Security.framework in Frameworks */,
+				1A7E245F1A89E5A7000884BD /* QuickLook.framework in Frameworks */,
+				1A7E245D1A89E5A1000884BD /* QuartzCore.framework in Frameworks */,
+				1A7E245B1A89E597000884BD /* MobileCoreServices.framework in Frameworks */,
+				1A7E24591A89E58E000884BD /* CoreText.framework in Frameworks */,
 				1A9764B91888FBE7007FDC4E /* CoreGraphics.framework in Frameworks */,
+				1A7E24571A89E580000884BD /* AssetsLibrary.framework in Frameworks */,
 				1A937E5A1A69168000E0EE9D /* Crashlytics.framework in Frameworks */,
 				1A9764BB1888FBE7007FDC4E /* UIKit.framework in Frameworks */,
 				1A9764B71888FBE7007FDC4E /* Foundation.framework in Frameworks */,
 				16A9547F978B9F5BAE690DA6 /* libPods.a in Frameworks */,
 				1A937E5B1A69168000E0EE9D /* Fabric.framework in Frameworks */,
+				1A7E24631A89E652000884BD /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +140,13 @@
 		1A9764B51888FBE7007FDC4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A7E24621A89E652000884BD /* HockeySDK.framework */,
+				1A7E24601A89E5AF000884BD /* Security.framework */,
+				1A7E245E1A89E5A7000884BD /* QuickLook.framework */,
+				1A7E245C1A89E5A1000884BD /* QuartzCore.framework */,
+				1A7E245A1A89E597000884BD /* MobileCoreServices.framework */,
+				1A7E24581A89E58E000884BD /* CoreText.framework */,
+				1A7E24561A89E580000884BD /* AssetsLibrary.framework */,
 				1AD004081A70D549005BE861 /* CrashReporter.framework */,
 				1AEB2B841889256F001F81A6 /* libz.dylib */,
 				1AEB2B8218892565001F81A6 /* SystemConfiguration.framework */,

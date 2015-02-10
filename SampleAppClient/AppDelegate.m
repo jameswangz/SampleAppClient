@@ -12,6 +12,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import <CrashReporter/CrashReporter.h>
 #import <Crittercism.h>
+#import <HockeySDK/HockeySDK.h>
 
 @implementation AppDelegate
 
@@ -26,8 +27,12 @@
 //    [Fabric with:@[CrashlyticsKit]];
     
     // Crittercism
-    [Crittercism enableWithAppID:@"54d332cd51de5e9f042ed67e"];
+//    [Crittercism enableWithAppID:@"54d332cd51de5e9f042ed67e"];
     
+    // HockeyApp
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"08a4a4aba39d0e7d729467b935e77abd"];
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
     
     // PLCrashReporter
 //    PLCrashReporter *crashReporter = [PLCrashReporter sharedReporter];
