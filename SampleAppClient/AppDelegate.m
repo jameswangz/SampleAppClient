@@ -13,21 +13,38 @@
 #import <CrashReporter/CrashReporter.h>
 #import <Crittercism.h>
 #import <HockeySDK/HockeySDK.h>
+#import <FoglightAPM/FoglightAPM.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //NewRelic
-//    [NewRelicAgent startWithApplicationToken:@"AA7d20584120ca855128c2bee19b56ef98fcd3073a" withoutSecurity:YES];
-//    [NRLogger setLogLevels:NRLogLevelALL];
-//    [NRLogger setLogTargets:NRLogTargetConsole|NRLogTargetFile];
     
-    // Crashlytics
-//    [Fabric with:@[CrashlyticsKit]];
+    //NewRelic
+    [NewRelicAgent startWithApplicationToken:@"AA7d20584120ca855128c2bee19b56ef98fcd3073a" withoutSecurity:YES];
+    [NRLogger setLogLevels:NRLogLevelALL];
+    [NRLogger setLogTargets:NRLogTargetConsole|NRLogTargetFile];
+    
+    // internal configs
+    [[NSUserDefaults standardUserDefaults] setObject:@"http://10.8.255.239:7630/archiverProxy?op=uploadhitdata" forKey:@"com.dell.FoglightAPM.beaconURL"];
+    [[NSUserDefaults standardUserDefaults] setInteger:5 forKey:@"com.dell.FoglightAPM.uploadInterval"];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"com.dell.FoglightAPM.compressFoglightHit"];
+    
+    
+    // standard configs
+    FoglightAPMConfig *config = [FoglightAPMConfig defaultConfig];
+    config.key = @"f34f7302-156d-42f9-8c0d-d5ec6193d5bd";
+    config.applicationName = @"Wordpress";
+    config.enableCrashTracking = YES;
+    config.logLevel = FoglightLogLevelVerbose;
+    [[FoglightAPM sharedInstance] startWithConfig:config];
+    
+    
+    // Crashlytic
+    [Fabric with:@[CrashlyticsKit]];
     
     // Crittercism
-//    [Crittercism enableWithAppID:@"54d332cd51de5e9f042ed67e"];
+    [Crittercism enableWithAppID:@"54d332cd51de5e9f042ed67e"];
     
     // HockeyApp
     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"08a4a4aba39d0e7d729467b935e77abd"];

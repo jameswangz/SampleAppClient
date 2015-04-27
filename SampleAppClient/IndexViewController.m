@@ -27,7 +27,7 @@
 
 - (void) initFieldValues
 {
-    self.url.text = @"http://10.8.255.235/wordpress/wp-login.php";
+    self.url.text = @"http://10.8.255.235:8088/wordpress/wp-login.php";
     self.callTimes.text = @"1";
 }
 
