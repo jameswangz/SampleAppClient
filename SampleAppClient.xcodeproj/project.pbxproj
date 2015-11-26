@@ -515,7 +515,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleAppClient/SampleAppClient-Prefix.pch";
 				INFOPLIST_FILE = "SampleAppClient/SampleAppClient-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/James/workspace/ios/SampleAppClient,
@@ -545,7 +545,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleAppClient/SampleAppClient-Prefix.pch";
 				INFOPLIST_FILE = "SampleAppClient/SampleAppClient-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/James/workspace/ios/SampleAppClient,
